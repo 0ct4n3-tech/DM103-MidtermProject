@@ -8,7 +8,7 @@ const MENU = [
 ];
 
 const STAGES = ["Placed", "Paid", "Confirmed", "Preparing", "Ready", "Completed"];
-const API_URL = "http://localhost:3000/api/orders"; // Fixed: Node.js server port
+const API_URL = "/api/orders";
 
 let orders = [];
 let counter = 0;

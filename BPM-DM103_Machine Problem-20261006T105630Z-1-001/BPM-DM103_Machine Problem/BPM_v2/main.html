@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html data-theme="dark" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Online Food Ordering Process</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <div class="top">
+      <div>
+        <h1>Online Food Ordering System</h1>
+      </div>
+      <div class = "top-actions">
+        <button class = "ghost" id = "exportTxt" type = "button">Export to .txt file</button>
+        <button class = "ghost" id = "importTxt" type = "button">Import .txt file</button>
+        <input type="file" id="fileInput" accept=".txt" style = "display: none;">
+      </div>
+      <button class="ghost" id="clear" type="button">Clear all orders</button>
+      
+    </div>
+
+    <div class="grid">
+      <section class="panel" aria-labelledby="newh">
+        <h2 id="newh">New order</h2>
+        <label for="cust">Customer name</label>
+        <input id="cust" placeholder="Maria Santos" autocomplete="off">
+        
+        <label for="food">Food</label>
+        <select id="food"></select>
+        
+        <label for="qty">Quantity</label>
+        <input id="qty" type="number" min="1" max="50" value="1" inputmode="numeric"> 
+        
+        <label>Payment</label>
+        <div class="seg" role="group" aria-label="Payment status">
+          <button type="button" id="payNo" class="on">Not paid</button>
+          <button type="button" id="payYes">Paid</button>
+        </div>
+        
+        <div class="total">
+          <span>Total amount</span>
+          <b id="total">₱0</b>
+        </div>
+        
+        <p class="err" id="err" role="alert"></p>
+        <button class="primary" id="place" type="button">Place order</button>
+      </section>
+
+      <section aria-labelledby="orh">
+        <h2 id="orh">Orders</h2>
+        <div id="list"></div>
+      </section>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

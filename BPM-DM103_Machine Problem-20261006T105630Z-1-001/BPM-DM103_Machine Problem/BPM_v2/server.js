@@ -8,6 +8,11 @@ const PORT = 3000;
 // Middleware
 app.use(cors());
 app.use(express.json());
+app.use(express.static(__dirname));
+
+app.get('/', (req, res) => {
+  res.sendFile('main.html', { root: __dirname });
+});
 
 // MySQL Database Connection Configuration
 const db = mysql.createConnection({

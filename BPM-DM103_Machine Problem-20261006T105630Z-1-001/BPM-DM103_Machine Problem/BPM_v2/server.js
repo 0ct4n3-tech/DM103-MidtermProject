@@ -16,11 +16,11 @@ app.get('/', (req, res) => {
 
 // MySQL Database Connection Configuration
 const db = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  port: 3306,
-  password: 'admin',
-  database: 'food_ordering'
+  host: process.env.DB_HOST || 'localhost',
+  user: process.env.DB_USER || 'root',
+  port: Number(process.env.DB_PORT || 3306),
+  password: process.env.DB_PASSWORD || 'admin',
+  database: process.env.DB_NAME || 'food_ordering'
 });
 
 db.connect(err => {
